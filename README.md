@@ -1,38 +1,76 @@
-# Express Boilerplate!
+## >> App Name:
 
-This is a boilerplate project used for starting new projects!
+Bookmarks-Server--Express-Server-assignment
 
-## Set up
+## >> APP Summary:
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+This project builds an Express Server with a secured API endpoint so that it can be safely opened to the public. It uses Express Router API so the endpoint with ID key(:id) is supported to target a particular piece of information of the 'database' (an in-memory array-based object).
 
-1. Clone this repository to your local machine 
-   git clone BOILERPLATE-URL NEW-PROJECTS-NAME
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with 
-   rm -rf .git && git init
-4. Install the node dependencies 
-   npm install
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server 
-   mv example.env .env
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+this project get the starter code via Project [express-boilerplate](https://github.com/davetam88/express-boilerplate)
 
-## Scripts
+Error handling/reporting will be via an info.log file facilitate with the Winston logging library middleware and the response code/message.
 
-Start the application 
-  npm start
+Note that endpoint only responds when given a valid Authorization header with a Bearer API token value. You can use the following page link to generate one  :
+[UUID generator](https://www.uuidgenerator.net/version1)
 
-Start nodemon for the application 
-  npm run dev
+Once it's generated, place the UUID string inside a .env file along with the NODE_ENV and server port number, similar to the following example.
+```
+NODE_ENV=development 
+PORT=8000
+API_TOKEN=YOUR-UUID
+```
 
-Run the tests 
-  npm test
+The endpoint supported are : 
+```
+GET /bookmark
+GET /bookmark/:id
+POST /bookmark
+DELETE /bookmark/:id
+```
 
-## Deploying
+The GET /bookmark endpoint return arrays of bookmarks
+The GET /bookmark/:id endpoint return bookmark item referenced by the route ID(:id).
+The POST /bookmark endpoint allows the user to add a bookmark 
+the database. 
+and DELETE /list/:id allow ueer to delete a bookmark object.
 
-When your new project is ready for deployment, add a new Heroku application with 
-  heroku create
-This will make a new git remote called "heroku" and you can then 
-  npm run deploy
-which will push to this remote's main branch.
+the sample format for the bookmark data/body information is as follows:
+```
+bookmark data format 
+{
+  "id" : "1",
+  "bookName" : "bookName 1",
+  "bookContent": "bookContent 1"
+}
+```
 
+## >> Screenshots
+
+Deletet query with Authorization header
+
+![main page](images/main.jpg)
+
+## >> Technologies used in this APP:
+
+* Express Server
+* app.get API
+* Express middleware
+* API tokens
+* Authorization headers
+* doenv (for the .env API authehitic key file)
+* CORS
+* Helmet
+* Winston logging library
+* morgan loggging tool
+
+-> Javascript: ES6
+
+-> Tools
+* Postman
+`* VSC Debugger
+* nodemon 
+* NPM
+
+
+
+## >> [Github Link](https://github.com/davetam88/Bookmarks-Server--Express-Server-assignment )
