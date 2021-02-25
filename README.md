@@ -34,13 +34,14 @@ The POST /bookmark endpoint allows the user to add a bookmark
 the database. 
 and DELETE /list/:id allow ueer to delete a bookmark object.
 
-the sample format for the bookmark data/body information is as follows:
+A sample format for the bookmark data/body information is as follows:
 ```
 bookmark data format 
 {
-  "id" : "1",
-  "bookName" : "bookName 1",
-  "bookContent": "bookContent 1"
+    "title" : "title 6", 
+    "url" : "url 6", 
+    "description" : "description 6", 
+    "rating" : "rating 6", 
 }
 ```
 
