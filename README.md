@@ -68,7 +68,7 @@ Deletet query with Authorization header
 
 -> Tools
 * Postman
-`* VSC Debugger
+* VSC Debugger
 * nodemon 
 * NPM
 
